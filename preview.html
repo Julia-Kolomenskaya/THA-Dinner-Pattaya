@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <title>Предпросмотр письма — Yandex Ads &amp; THA Private Dinner</title>
+  <style>
+    *{box-sizing:border-box}html{background:#0b0f17}body{margin:0;color:#f5f7fb;background:#0b0f17;font-family:Arial,Helvetica,sans-serif}
+    .bar{position:sticky;top:0;z-index:2;padding:16px 20px;background:rgba(20,26,36,.96);border-bottom:1px solid #283140;backdrop-filter:blur(12px)}
+    .back{display:inline-block;margin-bottom:12px;color:#aeb8ca;font-size:13px;text-decoration:none}.back:hover{text-decoration:underline}
+    h1{margin:0;font-size:20px;line-height:1.25}.subject{margin:6px 0 0;color:#aeb8ca;font-size:14px;line-height:1.4}
+    .controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.controls button{padding:9px 13px;border:1px solid #58657a;border-radius:9px;color:#e9edf5;background:#1b2330;cursor:pointer;font:inherit;font-size:13px}
+    .controls button[aria-pressed=true]{border-color:#4b3cff;background:#4b3cff;color:#fff}.controls button:focus-visible,.back:focus-visible{outline:3px solid #e1fa00;outline-offset:2px}
+    .stage{min-height:calc(100vh - 140px);padding:28px 12px 64px;overflow-x:auto;text-align:center}.viewport{display:inline-block;width:min(600px,100%);min-height:720px;overflow:hidden;background:#191e28;box-shadow:0 12px 36px rgba(0,0,0,.35);vertical-align:top}
+    iframe{display:block;width:100%;min-height:720px;border:0;background:#191e28}
+    @media(max-width:700px){.bar{position:static}.stage{min-height:0;padding:14px 6px 40px}}
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <a class="back" href="./">← Все письма</a>
+    <h1 id="name"></h1>
+    <p class="subject" id="subject"></p>
+    <nav class="controls" aria-label="Ширина предпросмотра">
+      <button type="button" data-width="600" aria-pressed="true">Компьютер · 600 px</button>
+      <button type="button" data-width="375" aria-pressed="false">Телефон · 375 px</button>
+      <button type="button" data-width="360" aria-pressed="false">Телефон · 360 px</button>
+    </nav>
+  </header>
+  <main class="stage"><div class="viewport" id="viewport"><iframe id="email" title="Письмо" sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe></div></main>
+  <script>
+    const letters = {
+      reminder: {name:'Напоминание за день',subject:'See you tomorrow at the Yandex Ads & THA Private Dinner',path:'reminder/index.html'},
+      'post-event': {name:'После мероприятия · черновик',subject:'Thank you for joining us in Pattaya!',path:'post-event/index.html'}
+    };
+    const params = new URLSearchParams(location.search);
+    const letter = letters[params.get('letter')] || letters.reminder;
+    document.getElementById('name').textContent = letter.name;
+    document.getElementById('subject').textContent = letter.subject;
+    document.title = letter.name + ' — предпросмотр';
+    const frame = document.getElementById('email');
+    const viewport = document.getElementById('viewport');
+    frame.src = letter.path;
+    const resize = () => {
+      try {
+        const doc = frame.contentDocument;
+        if (doc) frame.style.height = Math.max(720,doc.documentElement.scrollHeight,doc.body.scrollHeight) + 'px';
+      } catch (_) {}
+    };
+    frame.addEventListener('load', () => {resize();setTimeout(resize,150)});
+    const selectWidth = width => {
+      const button = document.querySelector(`[data-width="${width}"]`);
+      if (!button) return;
+      document.querySelectorAll('[data-width]').forEach(item => item.setAttribute('aria-pressed',String(item === button)));
+      viewport.style.width = `min(${width}px,100%)`;
+      setTimeout(resize,250);
+    };
+    document.querySelectorAll('[data-width]').forEach(button => button.addEventListener('click', () => selectWidth(button.dataset.width)));
+    const requested = params.get('width');
+    if (requested) selectWidth(requested);
+    window.addEventListener('resize',resize);
+  </script>
+</body>
+</html>
