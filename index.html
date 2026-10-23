@@ -2,113 +2,76 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
-  <title>Yandex Ads & THA Private Dinner — письма на согласование</title>
+  <title>Yandex Ads &amp; THA Private Dinner — письма на согласование</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main>
-    <header class="masthead">
-      <div class="eyebrow"><span class="dot"></span> Yandex Ads · THA · Pattaya 2026</div>
-      <h1>Письма на согласование</h1>
-      <p>Два письма для участников Yandex Ads &amp; THA Private Dinner. Выберите письмо и проверьте его текст и оформление в ширине компьютера или телефона.</p>
-      <div class="facts"><span>27 октября 2026</span><span>05:00 PM · время Паттайи</span><span>Torien Rooftop and Bar</span></div>
-    </header>
-
-    <section class="workspace" aria-label="Просмотр писем">
-      <nav class="letter-list" aria-label="Письма кампании">
-        <button class="letter-card is-selected" type="button" data-letter="reminder" aria-current="true">
-          <span class="card-top"><span class="number">01 / 02</span><span class="status">На согласовании</span></span>
-          <strong>Напоминание за день</strong>
-          <span class="subject">See you tomorrow at the Yandex Ads &amp; THA Private Dinner</span>
-          <span class="card-foot">Версия 6 <span aria-hidden="true">↗</span></span>
-        </button>
-        <button class="letter-card" type="button" data-letter="post-event" aria-current="false">
-          <span class="card-top"><span class="number">02 / 02</span><span class="status status--draft">Черновик</span></span>
-          <strong>После мероприятия</strong>
-          <span class="subject">Thank you for joining us in Pattaya!</span>
-          <span class="card-foot">Версия 5 <span aria-hidden="true">↗</span></span>
-        </button>
-        <aside class="review-note">
-          <strong>Что проверить</strong>
-          <p>Текст, тему, шапку, дату и место. В обоих письмах нет прехедера; адрес <span>nehad@yandex-team.com</span> открывает почту.</p>
-          <p>Для письма после встречи нужна ссылка на презентацию. Кнопка скачивания появится после её получения.</p>
-        </aside>
-      </nav>
-
-      <div class="review-panel">
-        <div class="panel-head">
-          <div>
-            <span class="panel-kicker" id="panel-kicker">Напоминание · за день до ужина</span>
-            <h2 id="panel-title">See you tomorrow at the Yandex Ads &amp; THA Private Dinner</h2>
-            <p id="panel-description">Готово для просмотра и согласования текста и дизайна.</p>
-          </div>
-          <a id="open-email" class="open-link" href="reminder/index.html" target="_blank" rel="noopener">Открыть письмо <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="toolbar" aria-label="Ширина просмотра">
-          <span>Просмотр</span>
-          <div class="view-switch">
-            <button type="button" class="is-active" data-width="desktop" aria-pressed="true">Компьютер</button>
-            <button type="button" data-width="mobile" aria-pressed="false">Телефон</button>
-          </div>
-          <span class="width-label" id="width-label">600 px</span>
-        </div>
-        <div class="canvas">
-          <div class="email-frame" id="email-frame">
-            <iframe id="email-preview" title="Превью письма" src="reminder/index.html" loading="eager"></iframe>
-          </div>
-        </div>
-        <p class="panel-footer">Это браузерное превью. Перед отправкой письма нужна проверка в почтовых клиентах.</p>
+    <section class="hero">
+      <img class="hero__image" src="assets/tha-dinner-header-tight-q95.jpg" alt="">
+      <div class="hero__shade"></div>
+      <div class="hero__copy">
+        <p class="eyebrow"><span></span>Review · Pattaya 2026</p>
+        <h1>Письма на согласование</h1>
+        <p>Yandex Ads &amp; THA Private Dinner</p>
       </div>
     </section>
+
+    <section class="intro">
+      <div><p class="kicker">Кампания</p><h2>Yandex Ads &amp; THA Private Dinner</h2></div>
+      <p class="intro__copy">Два письма для участников ужина. Откройте каждое превью, чтобы проверить текст и оформление в ширине компьютера или телефона.</p>
+    </section>
+
+    <section class="letters" aria-labelledby="letters-heading">
+      <div class="section-heading"><h2 id="letters-heading">Письма на английском</h2><p>2 письма</p></div>
+      <div class="grid">
+        <article class="card">
+          <div class="thumb" data-review-thumb>
+            <div class="thumb__stage"><iframe src="reminder/index.html" title="Миниатюра письма: напоминание за день" tabindex="-1" loading="eager"></iframe></div>
+            <a class="thumb__link" href="reminder/" target="_blank" rel="noopener" aria-label="Открыть превью: Напоминание за день"></a>
+          </div>
+          <div class="card__body">
+            <div class="topline"><span class="number">01</span><span class="status">Готово к согласованию</span></div>
+            <h3 class="email-name">Напоминание за день</h3>
+            <p class="email-subject">See you tomorrow at the Yandex Ads &amp; THA Private Dinner</p>
+            <a class="open" href="reminder/" target="_blank" rel="noopener">Открыть превью <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb" data-review-thumb>
+            <div class="thumb__stage"><iframe src="post-event/index.html" title="Миниатюра письма: после мероприятия" tabindex="-1" loading="eager"></iframe></div>
+            <a class="thumb__link" href="post-event/" target="_blank" rel="noopener" aria-label="Открыть превью: После мероприятия"></a>
+          </div>
+          <div class="card__body">
+            <div class="topline"><span class="number">02</span><span class="status status--draft">Черновик</span></div>
+            <h3 class="email-name">После мероприятия</h3>
+            <p class="email-subject">Thank you for joining us in Pattaya!</p>
+            <a class="open" href="post-event/" target="_blank" rel="noopener">Открыть превью <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <p>В обоих письмах нет прехедера. Адрес <a href="mailto:nehad@yandex-team.com">nehad@yandex-team.com</a> открывает почту.</p>
+      <p>Для письма после встречи нужна ссылка на презентацию. Кнопка скачивания появится после её получения.</p>
+    </footer>
   </main>
   <script>
-    const letters = {
-      reminder: {
-        kicker: 'Напоминание · за день до ужина',
-        title: 'See you tomorrow at the Yandex Ads & THA Private Dinner',
-        description: 'Готово для просмотра и согласования текста и дизайна.',
-        path: 'reminder/index.html'
-      },
-      'post-event': {
-        kicker: 'После мероприятия · черновик',
-        title: 'Thank you for joining us in Pattaya!',
-        description: 'Для завершения письма нужна ссылка на презентацию. Кнопка скачивания пока отсутствует.',
-        path: 'post-event/index.html'
-      }
+    const fitThumb = thumb => {
+      const stage = thumb.querySelector('.thumb__stage');
+      stage.style.transform = `scale(${thumb.clientWidth / 600})`;
     };
-    const preview = document.getElementById('email-preview');
-    const openEmail = document.getElementById('open-email');
-    document.querySelectorAll('[data-letter]').forEach(button => {
-      button.addEventListener('click', () => {
-        const key = button.dataset.letter;
-        const letter = letters[key];
-        document.querySelectorAll('[data-letter]').forEach(item => {
-          const selected = item === button;
-          item.classList.toggle('is-selected', selected);
-          item.setAttribute('aria-current', String(selected));
-        });
-        document.getElementById('panel-kicker').textContent = letter.kicker;
-        document.getElementById('panel-title').textContent = letter.title;
-        document.getElementById('panel-description').textContent = letter.description;
-        preview.src = letter.path;
-        preview.title = 'Превью: ' + letter.title;
-        openEmail.href = letter.path;
-      });
-    });
-    document.querySelectorAll('[data-width]').forEach(button => {
-      button.addEventListener('click', () => {
-        const mobile = button.dataset.width === 'mobile';
-        document.getElementById('email-frame').classList.toggle('is-mobile', mobile);
-        document.getElementById('width-label').textContent = mobile ? '360 px' : '600 px';
-        document.querySelectorAll('[data-width]').forEach(item => {
-          const active = item === button;
-          item.classList.toggle('is-active', active);
-          item.setAttribute('aria-pressed', String(active));
-        });
-      });
-    });
+    const thumbs = [...document.querySelectorAll('[data-review-thumb]')];
+    thumbs.forEach(fitThumb);
+    if ('ResizeObserver' in window) {
+      const observer = new ResizeObserver(entries => entries.forEach(entry => fitThumb(entry.target)));
+      thumbs.forEach(thumb => observer.observe(thumb));
+    } else {
+      window.addEventListener('resize', () => thumbs.forEach(fitThumb));
+    }
   </script>
 </body>
 </html>
