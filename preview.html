@@ -31,8 +31,8 @@
   <main class="stage"><div class="viewport" id="viewport"><iframe id="email" title="Письмо" sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe></div></main>
   <script>
     const letters = {
-      reminder: {name:'Напоминание за день',subject:'See you tomorrow at the Yandex Ads & THA Private Dinner',path:'reminder/index.html'},
-      'post-event': {name:'После мероприятия · черновик',subject:'Thank you for joining us in Pattaya!',path:'post-event/index.html'}
+      reminder: {name:'Напоминание за день',subject:'See you tomorrow at the Yandex Ads & THA Private Dinner',path:'reminder/index.html?v=no-support-1'},
+      'post-event': {name:'После мероприятия · черновик',subject:'Thank you for joining us in Pattaya!',path:'post-event/index.html?v=no-support-1'}
     };
     const params = new URLSearchParams(location.search);
     const letter = letters[params.get('letter')] || letters.reminder;
